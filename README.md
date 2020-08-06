@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/zlzkyuxin/zlzkyuxin.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+**<center>中科云谷gatLab操作手册</center>**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. 创建派生库(派生就是基于主库分化,类似于主分支和分支)
+![主库](https://www.zlzkyuxin.xyz/gitlab_photos/1596681300367.jpg "gitlab主库图片")
+![派生库](https://www.zlzkyuxin.xyz/gitlab_photos/1596681934035.jpg "gitlab派生库图片")
 
-### Markdown
+2. 将派生库clone到本地
+> `git clone http://gitlab.zoomlion.com/yuxin/gitlab-demo.git`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![派生库](https://www.zlzkyuxin.xyz/gitlab_photos/1596682203984.jpg "gitlab派生库图片")
 
-```markdown
-Syntax highlighted code block
+3. 本地库关联主库
+> `git remote add upstream http://gitlab.zoomlion.com/yx/gitlab-demo.git`
 
-# Header 1
-## Header 2
-### Header 3
+![关联主库](https://www.zlzkyuxin.xyz/gitlab_photos/1596682520332.jpg "gitlab关联主库图片")
 
-- Bulleted
-- List
+4. 将主库文件更新到本地(可能有其它同学更新内容合并到主库,所有合并操作前先将主库内容更新一下)
+> `git pull upstream master`
 
-1. Numbered
-2. List
+5. 然后再将文件修改后先推送到派生库
+>`git status` <br>
+> `git add .` <br>
+> `git commit -m '提交内容'` <br>
+> `git push origin master` <br>
 
-**Bold** and _Italic_ and `Code` text
+![推送到派生库](https://www.zlzkyuxin.xyz/gitlab_photos/1596683324834.jpg "gitlab推送到派生库图片")
 
-[Link](url) and ![Image](src)
-```
+6. 在派生库中发起合并申请,并选择需要合并的分支
+![派生库发起合并申请](https://www.zlzkyuxin.xyz/gitlab_photos/1596683595820.jpg "gitlab派生库发起合并申请图片")
+![派生库发起合并申请](https://www.zlzkyuxin.xyz/gitlab_photos/1596683938909.jpg "gitlab派生库发起合并申请图片")
+![派生库发起合并申请](https://www.zlzkyuxin.xyz/gitlab_photos/1596684400509.jpg "gitlab派生库发起合并申请图片")
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+7. 等待主库管理员同意合并,同意后则完成合并请求 
+![等待合并](https://www.zlzkyuxin.xyz/gitlab_photos/1596684607870.jpg "gitlab等待合并图片")
+![完成合并](https://www.zlzkyuxin.xyz/gitlab_photos/1596684701442.jpg "gitlab完成合并图片")
 
-### Jekyll Themes
+8. 将合并变更信息更新到本地并推送到派生库
+> `git pull upstream master` <br>
+> `git push origin master` <br>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zlzkyuxin/zlzkyuxin.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+附图: git常用操作命令
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+![git常用操作命令](https://www.zlzkyuxin.xyz/gitlab_photos/20190302200809745.png "git常用操作命令")
